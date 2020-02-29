@@ -1,16 +1,22 @@
+import java.time.LocalDate;
+
 /* Sample Input
 08 05 2015
 
 Sample Output
 WEDNESDAY */
 
-import java.time.LocalDate;
-
 public class JavaDateAndTime {
+
+    public static void main(String[] args) {
+        findDay(4, 12, 1996);
+    }
 
     public static String findDay(int month, int day, int year) {
 
-        return LocalDate.of(year, month, day).getDayOfWeek().name();
+        String value = LocalDate.of(year, month, day).getDayOfWeek().name();
+        System.out.println(value);
+        return value;
     }
 
 }
