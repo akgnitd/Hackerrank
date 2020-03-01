@@ -1,30 +1,42 @@
-import java.io.*;
-import java.util.*;
+import java.util.Scanner;
 
 public class JavaStringReverse {
 
     public static void main(String[] args) {
-        
-        Scanner sc=new Scanner(System.in);
-        String a=sc.next();
-        /* Enter your code here. Print output to STDOUT. */
-        String rev[] = new String[a.length()];
-        int size = a.length();
+
+        Scanner sc = new Scanner(System.in);
+        String text = sc.next();
+
+        reverseBasic(text);
+        reverse(text);
+
+    }
+
+    private static void reverse(String text) {
+
+        System.out.println(text.equals(new StringBuilder(text).reverse().toString()) ? "Yes" : "No");
+    }
+
+    private static void reverseBasic(String text) {
+        int size = text.length();
+
+        String rev[] = new String[size];
         for (int i = 0; i < size; i++) {
             if (i + 1 < size) {
-                rev[i] = a.substring(i, i + 1);
+                rev[i] = text.substring(i, i + 1);
             } else {
-                rev[i] = a.substring(i);
+                rev[i] = text.substring(i);
             }
         }
-        String b = "";
-        for (int i = size; i > 0 ; i--) {
-            b = b + rev[i-1];
+        String reverseText = "";
+        for (int i = size; i > 0; i--) {
+            reverseText = reverseText + rev[i - 1];
         }
-        if (a.compareTo(b) == 0) {
+        if (text.compareTo(reverseText) == 0) {
             System.out.println("Yes");
         } else {
             System.out.println("No");
         }
     }
+
 }
