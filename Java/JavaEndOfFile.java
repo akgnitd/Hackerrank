@@ -1,11 +1,11 @@
 import java.io.*;
 import java.util.*;
 
-public class Solution {
+public class JavaEndOfFile {
 
     public static void main(String[] args) {
 
-           Scanner scan = new Scanner(System.in);
+        Scanner scan = new Scanner(System.in);
         int count = 0;
         while (scan.hasNext()) {
             count++;
