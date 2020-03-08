@@ -14,20 +14,27 @@ public class JavaAnagrams {
 
     static boolean isAnagram(String a, String b) {
         // Complete the function
-        int size = a.length() > b.length() ? a.length() : b.length();
+        if (a.length() != b.length()) return false;
+        a = a.toLowerCase();b = b.toLowerCase();
         int asciiA = 0, asciiB = 0;
-        for (int i = 0; i < size; i++) {
-            if (i < a.length()) {
-                asciiA = asciiA + (int) a.toLowerCase().toCharArray()[i];
-            }
-            if (i < b.length()) {
-                asciiB = asciiB + (int) b.toLowerCase().toCharArray()[i];
-            }
+        //ASCII Verification
+        for (int i = 0; i < a.length(); i++) {
+            asciiA = asciiA + (int) a.toCharArray()[i];
+            asciiB = asciiB + (int) b.toCharArray()[i];
         }
-        if (asciiA == asciiB) {
-            return true;
-        } else {
+        if (asciiA != asciiB) {
             return false;
         }
+        //Characters presence verification
+        for (int i = 0; i < a.length(); i++) {
+            char aa = a.charAt(i);
+            char bb = b.charAt(i);
+            if (b.contains(Character.toString(aa)) && a.contains(Character.toString(bb))) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+        return true;
     }
 }
