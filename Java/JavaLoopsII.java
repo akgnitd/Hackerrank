@@ -1,7 +1,7 @@
 import java.util.*;
 import java.io.*;
 
-class Solution {
+class JavaLoopsII {
     public static void main(String []argh){
         Scanner in = new Scanner(System.in);
         int t=in.nextInt();
